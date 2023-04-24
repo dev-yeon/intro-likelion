@@ -6,12 +6,17 @@
 //
 
 import Foundation
-struct coffee :Identifiable {
-    let name :String //한글
-    let imageName :String //파일명과 일치
-    let description :String //상세설명 
-    var id :String {
-        self.name
-    }
+
+struct Coffee : Identifiable {
+    var id : UUID = UUID()
+    var name : String //한글
+    var description :String //상세설명
+    var imageName :String //파일명과 일치
+    var link : String
     
+    
+    var preDescription : String {
+        return String(description.prefix(70))
+ 
+    }
 }
